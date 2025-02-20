@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Pl Whatsapp Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/feather/feather.css">
   <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -17,6 +17,26 @@
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
+
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/10.13.1/firebase-app-compat.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/10.13.1/firebase-auth-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-database-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-firestore-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-messaging-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-storage-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-analytics-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-remote-config-compat.js"></script>
+      <script defer src="/__/firebase/10.13.1/firebase-performance-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  
+      <!-- 
+        initialize the SDK after all desired features are loaded, set useEmulator to false
+        to avoid connecting the SDK to running emulators.
+      -->
+      <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 
 <body>
@@ -27,36 +47,30 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
+                <center>
                 <img src="../../images/logo.svg" alt="logo">
+                </center>
               </div>
-              <h4>Hello! let's get started</h4>
+              <center><h4>"Its a sign of life!"</h4></center>
+              <br>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="Username">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" id="signInBtn">SIGN IN</a>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook mr-2"></i>Connect using facebook
+                  <button type="button" class="btn btn-block btn-facebook auth-form-btn" id="signUpBtn">
+                   SIGN UP
                   </button>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
                 </div>
               </form>
             </div>
@@ -81,5 +95,94 @@
   <script src="../../js/todolist.js"></script>
   <!-- endinject -->
 </body>
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+   import {
+       getAuth,
+       createUserWithEmailAndPassword,
+       signInWithEmailAndPassword,
+       onAuthStateChanged,
+       signOut
+   } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";  
+   
 
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+     apiKey: "AIzaSyCHe3WPc_lRlnlpXRJv3kPpBNWTKEBD9Ro",
+     authDomain: "whatsapp-dash.firebaseapp.com",
+     databaseURL: "https://whatsapp-dash-default-rtdb.firebaseio.com/",
+     projectId: "whatsapp-dash",
+     storageBucket: "whatsapp-dash.appspot.com",
+     messagingSenderId: "222433305889",
+     appId: "1:222433305889:web:5104403857e58a038a0a60"
+   };  
+
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   const auth = getAuth(app);
+
+   const email=document.getElementById('email');
+   const password=document.getElementById('password');
+   const signUpBtn=document.getElementById('signUpBtn');
+   const signInBtn=document.getElementById('signInBtn');
+
+       //check auth state
+       const checkAuthState=()=>{
+        onAuthStateChanged(auth,(user)=>{
+            if(user){
+                //window.location.replace('dashboard/');
+                console.log('user is signed in');
+            }else{
+             console.log('user is signed out');
+            }
+        })
+      }
+     checkAuthState();
+
+//signup
+const signUp= async ()=>{
+         const signUpEmail=email.value;
+         const signUpPassword=password.value;
+         createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+         .then((userCreditional) => {
+             // Signed in 
+             const user = userCreditional.user;
+             console.log(user);
+             alert('user created successfully');
+         })
+         .catch((error) => {
+             const errorCode = error.code;
+             const errorMessage = error.message;
+             console.log(errorCode,errorMessage);
+             alert(errorMessage);
+         });
+     }     
+
+     //signin
+     const signIn= async ()=>{
+         const signInEmail=email.value;
+         const signInPassword=password.value;
+         signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+         .then((userCredential) => {
+             // Signed in
+             const user = userCredential.user;
+             console.log(user);
+             alert('user signed in successfully');
+            //  loadData();
+            //  readData();
+         })
+         .catch((error) => {
+             const errorCode = error.code;
+             const errorMessage = error.message;
+             console.log(errorCode,errorMessage);
+             alert(errorMessage);
+         });
+     }     
+
+     signUpBtn.addEventListener('click', signUp);
+     signInBtn.addEventListener('click', signIn);
+
+</script>
 </html>

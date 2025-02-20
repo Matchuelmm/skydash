@@ -5,20 +5,48 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Pl Whatsapp Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href=/dashboard/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/dashboard/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/dashboard/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="/dashboard/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="/dashboard/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="/dashboard/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="/dashboard/images/favicon.png" />
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/10.13.1/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/10.13.1/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/10.13.1/firebase-performance-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+
+  
+
+  <!-- 
+    initialize the SDK after all desired features are loaded, set useEmulator to false
+    to avoid connecting the SDK to running emulators.
+  -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>  
+
 </head>
 
 <body>
@@ -26,8 +54,8 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="/dashboard/index.html"><img src="/dashboard/images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/dashboard/index.html"><img src="/dashboard/images/logo.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -96,14 +124,14 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/face28.jpg" alt="profile"/>
+              <img src="/dashboard/images/faces/face1.png" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" id="signOutBtn">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -236,7 +264,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -244,7 +272,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -255,7 +283,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -263,7 +291,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -271,7 +299,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -279,7 +307,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/dashboard/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -293,107 +321,72 @@
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/dashboard/">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Manage Contacts</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/pages/contacts/upload/"> Upload Contacts</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Capture Contacts </a></li>
               </ul>
             </div>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Send Message</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dashboard/pages/messaging/">Plain-Text Message</a></li>
               </ul>
             </div>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/dashboard/pages/messaging/interactive/">Interactive Message</a></li>
+              </ul>
+            </div>       
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/dashboard/pages/messaging/terms/">MetaTerms Message</a></li>
+              </ul>
+            </div>                   
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Reports</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/pages/charts/">Graphical Reports</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Message Logs</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/pages/tables/">view logs</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/documentation/documentation.html">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
           </li>
         </ul>
       </nav>
@@ -401,7 +394,7 @@
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Default form</h4>
@@ -436,8 +429,8 @@
                   </form>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            </div> -->
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Horizontal Form</h4>
@@ -486,59 +479,56 @@
                   </form>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic form elements</h4>
+                  <h4 class="card-title">Send Meta Terms acknowledgement Message</h4>
                   <p class="card-description">
-                    Basic form elements
+                    Send Meta Terms Whatsapp Messages
                   </p>
-                  <form class="forms-sample">
+    
                     <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      <label for="exampleInputName1">Conatcts List Name</label>
+                      <!-- <input type="text" class="form-control" id="cont_list" placeholder="Contact List Name"> -->
+                      <select id="cont_list" class="form-control">
+                        <option value="MSpecials_whatsapp_contacts_list">This Month Machines SPecials List</option>
+                        <option value="M_D_O_M_whatsapp_contacts_list">Machines Deal Of The Month List</option>
+                        <option value="MCS_whatsapp_contacts_list">Machines Clearance Sale List</option>
+                        <option value="MSpecials_whatsapp_contacts_list">Machines Specials List</option>
+                        <option value="5k10k_whatsapp_contacts_list">Machines based on Price List(R5k to R10k) List</option>
+                        <option value="10k15k_whatsapp_contacts_list">Machines based on Price List(R10k to R15k) List</option>
+                        <option value="15k20k_whatsapp_contacts_list">Machines based on Price List(R15k to R20k) List</option>
+                        <option value="20k50k_whatsapp_contacts_list">Machines based on Price List(R20k to R50k) List</option>
+                        <option value="50k100k_whatsapp_contacts_list">Machines based on Price List(R50k to R100k+) List</option>
+                        <option value="newTechArrivals_whatsapp_contacts_list">New Technologies Arriving List</option>
+                        <option value="handheldMachines_whatsapp_contacts_list">Sublimation Blanks List (Handheld Machines)</option>
+                        <option value="batteryPoweredTechnology_whatsapp_contacts_list">Battery Powered Printing Technology List (Sublimation)</option>
+                        <option value="opticalConveyorTechnology_whatsapp_contacts_list">Optical Conveyor Technology List (Sublimation)</option>
+                        <option value="opticalPrinting_whatsapp_contacts_list">Optical Printing Technology List (Sublimation)</option>
+                        <option value="laserCutters_whatsapp_contacts_list">Laser Cutting Machines List (Sublimation)</option>
+                      </select>                       
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
+                    <!-- <div class="form-group">
+                      <label for="exampleSelectGender">Choose Contact List</label>
                         <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
+                          <option>Choose List</option>
+                          <option>small_test</option>
+                          <option>staff_members</option>
+                          <option>cust_sold_list</option>
                         </select>
-                      </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                    </div>
-                    <div class="form-group">
+                      </div> -->
+                    <!-- <div class="form-group">
                       <label for="exampleTextarea1">Textarea</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
+                      <textarea class="form-control" id="message_cap" rows="4"></textarea>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary mr-2" id="savecont">Send Message</button>
+                    <button class="btn btn-primary mr-2" onclick="window.location.replace('')">Cancel</button>
+            
                 </div>
               </div>
             </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Input size</h4>
@@ -559,8 +549,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            </div> -->
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Select size</h4>
@@ -599,8 +589,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            </div> -->
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Basic input groups</h4>
@@ -672,8 +662,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            </div> -->
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Checkbox Controls</h4>
@@ -1044,14 +1034,14 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025.  Clout-It <a href="https://www.clout-it.co.za/" target="_blank"> Clout-It. All rights reserved.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
         </footer>
@@ -1063,24 +1053,178 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
-  <script src="../../vendors/select2/select2.min.js"></script>
+  <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="/dashboard/vendors/select2/select2.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="/dashboard/js/off-canvas.js"></script>
+  <script src="/dashboard/js/hoverable-collapse.js"></script>
+  <script src="/dashboard/js/template.js"></script>
+  <script src="/dashboard/js/settings.js"></script>
+  <script src="/dashboard/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="../../js/file-upload.js"></script>
-  <script src="../../js/typeahead.js"></script>
-  <script src="../../js/select2.js"></script>
+  <script src="/dashboard/js/file-upload.js"></script>
+  <script src="/dashboard/js/typeahead.js"></script>
+  <script src="/dashboard/js/select2.js"></script>
   <!-- End custom js for this page-->
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+   //  import { initializeApp } from "firebase/app";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+    // import firebase from "firebase/compat/app";
+    // Required for side-effects
+    // import "firebase/firestore";
+    
+ 
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCHe3WPc_lRlnlpXRJv3kPpBNWTKEBD9Ro",
+      authDomain: "whatsapp-dash.firebaseapp.com",
+      databaseURL: "https://whatsapp-dash-default-rtdb.firebaseio.com/",
+      projectId: "whatsapp-dash",
+      storageBucket: "whatsapp-dash.appspot.com",
+      messagingSenderId: "222433305889",
+      appId: "1:222433305889:web:5104403857e58a038a0a60"
+    };
+
+        // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+ 
+    // loadData();
+    // readData();
+
+    const savecontacts = document.getElementById('savecont');
+    // const uploadcontacts = document.getElementById('readcont');
+    const signOutBtn=document.getElementById('signOutBtn');
+ 
+    // // Toggle sidebar open/close
+    // savecontacts.addEventListener('click', () => {
+    //     var database = firebase.database();
+
+    //     var ids = document.getElementById("idents").value.toString();
+    //     var names = document.getElementById("name").value.toString();
+    //     //var surname = document.getElementById("surname").value.toString();
+    //     var contacts = document.getElementById("contact").value.toString();  
+        
+    //     //loadData();
+    //     alert("***Data stored successfully!---"+names+"----"+contacts);
+
+    //     const db = firebase.firestore(); 
+
+    //         db.collection(document.getElementById("cont_list").value.toString()).add({
+    //             names: names,
+    //             contact: contacts,
+    //             company: ids
+    //         })
+    //         .then((docRef) => {
+    //             console.log("Document written with ID: "+ docRef.id);
+    //         })
+    //         .catch((error) => {
+    //             alert("Error adding document: "+ error);
+    //         });         
+       
+    // });
+
+
+        // Toggle sidebar open/close
+        savecontacts.addEventListener('click', () => {
+             //alert("FETCHING RECORDS!!!");
+
+            // Initialize Cloud Firestore and get a reference to the service
+            const db = firebase.firestore(); 
+
+            db.collection(document.getElementById("cont_list").value.toString()).get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // alert(`Names => ${doc.data().names}`);
+                    // alert(`Contacts => ${doc.data().contact}`);
+                    // alert(`Company => ${doc.data().company}`);
+                    // var listt = document.getElementById("cont_list").value.toString();
+                    // var captions = document.getElementById("message_cap").value.toString();
+                    // var link_spec = document.getElementById("deal_url").value.toString();
+                    // Original phone number
+                    runMessager(doc.data().contact);
+                  
+                });
+            });           
+   
+    });
+
+
+    async function runMessager(contacts) {
+                    
+        const data = '{ "messaging_product": "whatsapp", "to": "'+contacts+'", "type": "template", "template": { "name": "welcome_message", "language": { "code": "en_US" } } }';  
+        
+        const url = 'https://graph.facebook.com/v20.0/429246373597294/messages';
+
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                // 'Authorization': 'Bearer EAAGJfuIm2nABO6UO4JBMylKHKtQzuJUDch1icjMAGKi9bOtxi3s2GEdOsRRk5JZCZBXL1YKgqecSgbIMR96NYRfx6XICdwe7zEVxZAY8LHa1wnL2Gp8oc9oJs2pxp84XUoxz2oeZCYSc09eqzWqSzvZBFh63iaFIK2BfvfEssyXJQfTYrZBUMs6Ep45vJGdSVvoWGPZAK6Mb1i1ZBaKFo5fyQEldmvc7s4GN6xSSHLcT',
+                'Authorization': 'Bearer EAAGJfuIm2nABO0ZCRTaf5bKBTAoxux9ssa97ZA3EEOLf2cqr96Vx8tE7ZCZApbrT3hUjNuAzL4n4mcA4y6P8IzNFPTgMWPcxO3quW29FO4IDMOKHGPvZAQZCNDWghqvYW6ZCRTiZAEYzTE4PxGCoNZClAqtO2W7e3K6cuqkcTC8F0b94y7tzPD0ZCQQPFclieg1ytkrwZBvurHmKc7H7g9vBWBf6nL29md1yyZC0iK7OUZCxW',
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        });
+
+        const text = await response.text();
+
+        console.log(text); 
+    }
+
+    const checkAuthState=()=>{
+        onAuthStateChanged(auth,(user)=>{
+            if(user){
+                //login.style.display='none';
+                //authPart.style.display='block';
+                console.log('user is signed in!');
+            }else{
+            // login.style.display='block';
+            // authPart.style.display='none';
+             console.log('user is signed out');
+             window.location.replace('https://whatsapp-dash.web.app/');
+            }
+        })
+      }
+     checkAuthState();    
+
+     
+      //signout
+      const userSignOut=()=>{
+      signOut(auth).then(() => {
+        console.log('user signed out');
+        alert('user signed out successfully');
+        window.location.replace('https://whatsapp-dash.web.app/');
+      }).catch((error) => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode,errorMessage);
+        alert(errorMessage);
+      });
+      }  
+
+
+      signOutBtn.addEventListener('click', userSignOut);
+      
+   </script> 
+
 </body>
 
 </html>
